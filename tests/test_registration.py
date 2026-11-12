@@ -1,6 +1,6 @@
 from pages.registration_page import RegistrationPage
 
-VALID_EMAIL = "test123@gg.com"
+VALID_EMAIL = "test12377@gg.com"
 INVALID_EMAIL = "test1gg.com"
 REGISTERED_EMAIL = "test1@gg.com"
 VALID_PASSWORD = "Aa_1234!"

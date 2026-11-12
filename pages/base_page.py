@@ -10,7 +10,7 @@ class BasePage:
         return self.driver.find_element(*locator)
 
     def click(self, locator):
-        self.driver.find(locator).click()
+        self.find(locator).click()
 
     def fill(self, locator, value):
         self.find(locator).clear()

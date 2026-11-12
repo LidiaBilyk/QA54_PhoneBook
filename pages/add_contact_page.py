@@ -34,7 +34,7 @@ class ContactPage(BasePage):
         self.fill(self.ADDRESS_INPUT, address)
 
     def fill_description_field(self, description):
-        self.fill(self.DESCRIPTION_INPUT)
+        self.fill(self.DESCRIPTION_INPUT, description)
 
     def fill_contact_form(self,contact):
         self.fill_first_name_field(contact.first_name)
