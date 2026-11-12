@@ -3,34 +3,27 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
+from pages.base_page import BasePage
 
-class LoginPage:
+
+class LoginPage(BasePage):
     LOGIN_LINK = (By.CSS_SELECTOR, "a[href='/login']")
     EMAIL_INPUT = (By.CSS_SELECTOR, "input[name='email']")
     PASSWORD_INPUT = (By.CSS_SELECTOR, "input[name='password']")
     LOGIN_BUTTON = (By.CSS_SELECTOR, "button[name='login']")
     SIGN_OUT_BUTTON = (By.XPATH, "//*[text()='Sign Out']")
 
-    def __init__(self, driver):
-        self.driver = driver
-
     def open_login_page(self):
-        # self.driver.get(self.LOGIN_LINK).click()
-        self.driver.find_element(*self.LOGIN_LINK).click()
+        self.click(self.LOGIN_LINK)
 
     def fill_email_field(self, email):
-        self.driver.find_element(*self.EMAIL_INPUT).clear()
-        self.driver.find_element(*self.EMAIL_INPUT).send_keys(email)
+        self.fill(self.EMAIL_INPUT, email)
 
     def fill_password_field(self, password):
-        self.driver.find_element(*self.PASSWORD_INPUT).clear()
-        self.driver.find_element(*self.PASSWORD_INPUT).send_keys(password)
+        self.fill(self.PASSWORD_INPUT, password)
 
     def click_login_button(self):
-        self.driver.find_element(*self.LOGIN_BUTTON).click()
-
-    # def is_sign_out_displayed(self):
-    #     return self.driver.find_element(*self.SIGN_OUT_BUTTON).is_displayed()
+        self.click(self.LOGIN_BUTTON)
 
     def is_sign_out_displayed(self):
         try:
