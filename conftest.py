@@ -10,7 +10,7 @@ def driver():
     driver = webdriver.Chrome()
     driver.implicitly_wait(10)
     driver.maximize_window()
-    driver.get("https://telranedu.web.app")
+    driver.get("https://telranedu.pages.dev/")
     yield driver
     driver.quit()
 
